@@ -144,13 +144,11 @@ const Header = ({ cartItems }: HeaderProps) => {
 							<TopBarMenu>
 								<TopBarMenuList>
 									<TopBarMenuListItem>
-										<Link to="/atendimento">
-											Atendimento
-										</Link>
+										<Link to="#">Atendimento</Link>
 									</TopBarMenuListItem>
 
 									<TopBarMenuListItem>
-										<Link to="/ajuda">Ajuda</Link>
+										<Link to="#">Ajuda</Link>
 									</TopBarMenuListItem>
 
 									<TopBarMenuListItem>
@@ -198,10 +196,7 @@ const Header = ({ cartItems }: HeaderProps) => {
 									/>
 								</Link>
 
-								<Link
-									to="/cesta-de-compras"
-									className="basket__itens"
-								>
+								<Link to="/cart" className="basket__itens">
 									<img
 										src="/assets/icons/basket-dark.svg"
 										alt="Cesta"

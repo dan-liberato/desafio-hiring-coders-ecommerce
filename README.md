@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+![Screenshot](screenshot.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## #2 Desafio Hiring Coders #2
 
-## Available Scripts
+<b>Desafio</b> - Criação de um sistema e-commerce para inventário de produtos e dados de clientes.
 
-In the project directory, you can run:
+## Sobre o projeto
+Infelizmente devido a problemas pessoais e familiares não consegui acompanhar o treinamento durante essa semana (de 19/07 a 25/07), expliquei sobre isso nos Assignments sobre Times Ágeis e Liderança. Então fiz o máximo que consegui, de acordo com o tempo que tive. Fiz uma parte simples de cadastro do cliente, não tem segurança e nem validação, também criei uma parte do admin, página com todos os produtos e cadastro de produtos.
+Faltou várias funcionalidades, aos poucos tentarei refatorar e vou adicionar o que faltou.
 
-### `yarn start`
+## Para ver/testar, acesse
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Ogma Store](https://ogma.vercel.app/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+Rota para testar o Admin
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> https://ogma.vercel.app/dashboard/login
 
-### `yarn build`
+## Tecnologias**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<div style="**display**: inline_block"><br>
+  <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+  <img align="center" alt="Styled Components" height="30" width="100" src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
+   <img align="center" alt="Typescript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
+  <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/figma/figma-original.svg">
+</div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { useHistory } from "react-router-dom";
 import Layout from "../../components/Layout";
 
 import { Container, Product } from "./style";
@@ -15,11 +15,16 @@ interface IProduct {
 
 const Cart = () => {
 	const [clientCart, setClientCart] = useState<IProduct[]>([]);
+	const history = useHistory();
 
 	useEffect(() => {
 		const getUserCart = JSON.parse(localStorage.getItem("product"));
+		console.log(getUserCart);
+		if (getUserCart === null) {
+			history.push("/");
+		}
 		setClientCart(getUserCart);
-	}, []);
+	}, [history]);
 
 	return (
 		<Layout>

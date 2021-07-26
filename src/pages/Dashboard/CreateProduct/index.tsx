@@ -1,6 +1,8 @@
 import React, { useEffect, useState, FormEvent } from "react";
 import { useHistory } from "react-router-dom";
 
+import { data } from "../../../services/data";
+
 import AdminMenu from "../../../components/AdminMenu";
 import { Form, FormInput } from "../../../components/Form";
 import { Button } from "../../../components/Button";
@@ -8,7 +10,7 @@ import { Button } from "../../../components/Button";
 import { Container, FormContainer } from "./style";
 
 interface IProduct {
-	id: string;
+	id: number;
 	title: string;
 	price: string | number;
 	description?: string;
@@ -20,7 +22,7 @@ const CreateProduct = () => {
 	const [title, setTitle] = useState<string>("");
 	const [price, setPrice] = useState<string>("");
 	const [image, setImage] = useState<string>("");
-	const [data, setData] = useState<IProduct[]>([]);
+	const [products, setProducts] = useState<IProduct[]>([]);
 	// const [message, setMessage] = useState<string>("");
 
 	const history = useHistory();
@@ -34,7 +36,7 @@ const CreateProduct = () => {
 			price,
 			image,
 		};
-		allProducts.push(...data, newProduct);
+		allProducts.push(...products, newProduct);
 		localStorage.setItem("allProducts", JSON.stringify(allProducts));
 		setTitle("");
 		setPrice("");
@@ -44,7 +46,7 @@ const CreateProduct = () => {
 
 	useEffect(() => {
 		const allProducts = JSON.parse(localStorage.getItem("allProducts"));
-		setData(allProducts);
+		allProducts === null ? setProducts(data) : setProducts(allProducts);
 	}, []);
 
 	return (

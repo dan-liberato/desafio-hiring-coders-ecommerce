@@ -59,9 +59,9 @@ const Home = () => {
 
 	useEffect(() => {
 		const productList = JSON.parse(localStorage.getItem("allProducts"));
-		data !== productList ? setProducts(productList) : setProducts(data);
-		data !== productList
-			? setGridProducts(productList)
+		productList === null ? setProducts(data) : setProducts(productList);
+		productList === null
+			? setGridProducts(data)
 			: setGridProducts(productList);
 	}, []);
 
@@ -115,7 +115,7 @@ const Home = () => {
 					<Grid>
 						{gridProducts.map((product, index) => (
 							<Product
-								key={String(index + 1)}
+								key={product.title}
 								img={product.image}
 								title={product.title}
 								price={product.price.toLocaleString("pt-br", {

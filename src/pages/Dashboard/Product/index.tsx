@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiPlusSquare } from "react-icons/fi";
 
+import { data } from "../../../services/data";
+
 import AdminMenu from "../../../components/AdminMenu";
 import { Button } from "../../../components/Button";
 
 import { Container, TableContainer } from "./styles";
 
 interface IProduct {
-	id: string;
+	id: number;
 	title: string;
 	price: string | number;
 	description?: string;
@@ -20,8 +22,8 @@ const Products = () => {
 	const [products, setProducts] = useState<IProduct[]>([]);
 
 	useEffect(() => {
-		const productList = localStorage.getItem("allProducts");
-		setProducts(JSON.parse(productList));
+		const productList = JSON.parse(localStorage.getItem("allProducts"));
+		productList === null ? setProducts(data) : setProducts(productList);
 	}, []);
 
 	return (

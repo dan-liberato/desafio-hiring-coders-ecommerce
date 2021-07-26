@@ -6,11 +6,10 @@ export const Container = styled.div`
 
 export const Product = styled.div`
     margin: auto;
-    display: inline-flex;
-    flex-flow: column;
+    display: flex;
+    flex-flow: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 600px;
     height: 100px;
 `

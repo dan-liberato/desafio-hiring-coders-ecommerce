@@ -29,8 +29,8 @@ const Home = () => {
 		{ width: 768, itemsToShow: 3 },
 		{ width: 1200, itemsToShow: 4 },
 	];
-	const [products, setProducts] = useState<IProduct[]>(data);
-	const [gridProducts, setGridProducts] = useState<IProduct[]>(data);
+	const [products, setProducts] = useState<IProduct[]>([]);
+	const [gridProducts, setGridProducts] = useState<IProduct[]>([]);
 	const [cart, setCart] = useState<IProduct[]>([]);
 	const productsOnCart: any = localStorage.getItem("product");
 
@@ -59,8 +59,10 @@ const Home = () => {
 
 	useEffect(() => {
 		const productList = JSON.parse(localStorage.getItem("allProducts"));
-		setProducts(productList);
-		setGridProducts(productList);
+		data !== productList ? setProducts(productList) : setProducts(data);
+		data !== productList
+			? setGridProducts(productList)
+			: setGridProducts(productList);
 	}, []);
 
 	return (
@@ -83,7 +85,7 @@ const Home = () => {
 						{products.map((product, index) => (
 							<>
 								<Product
-									key={String(index + 1)}
+									key={product.title}
 									img={product.image}
 									title={product.title}
 									price={product.price.toLocaleString(

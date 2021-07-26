@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "react-elastic-carousel";
 
+import { data } from "../../services/data";
+
 import Layout from "../../components/Layout";
 import Container from "../../components/Container";
 import Grid from "../../components/Grid";
@@ -12,7 +14,7 @@ import Product from "../../components/Product";
 import { SectionTitle, CarouselArea, Products } from "../../styles/style";
 
 interface IProduct {
-	id: string;
+	id: number;
 	title: string;
 	price: string | number;
 	description?: string;
@@ -27,8 +29,8 @@ const Home = () => {
 		{ width: 768, itemsToShow: 3 },
 		{ width: 1200, itemsToShow: 4 },
 	];
-	const [products, setProducts] = useState<IProduct[]>([]);
-	const [gridProducts, setGridProducts] = useState<IProduct[]>([]);
+	const [products, setProducts] = useState<IProduct[]>(data);
+	const [gridProducts, setGridProducts] = useState<IProduct[]>(data);
 	const [cart, setCart] = useState<IProduct[]>([]);
 	const productsOnCart: any = localStorage.getItem("product");
 
@@ -38,8 +40,6 @@ const Home = () => {
 
 		const listProductsCart = [];
 		const listProducts = JSON.parse(productsOnCart);
-
-		console.log(productsOnCart);
 
 		productsOnCart === null
 			? listProductsCart.push(products[index] || gridProducts[index])

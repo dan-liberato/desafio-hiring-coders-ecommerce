@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { GlobalStyle } from "./styles/globals";
+import Router from "./routes";
+
+import { data } from "./services/data";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	useEffect(() => {
+		localStorage.setItem("allProducts", JSON.stringify(data));
+	}, []);
+
+	return (
+		<>
+			<GlobalStyle />
+			<Router />
+		</>
+	);
 }
 
 export default App;
